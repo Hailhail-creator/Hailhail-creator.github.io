@@ -116,4 +116,474 @@
             box-shadow: 0 0 15px #0ff;
         }
         
+        .ghost::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 3px solid #0ff;
+            box-shadow: 0 0 15px #0ff;
+        }
         
+        .ghost-eye {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            width: 8px;
+            height: 8px;
+            background: #0ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #0ff;
+        }
+        
+        .ghost-eye.right {
+            left: 30px;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(15px); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Neon border effect */
+        .neon-box {
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: borderPulse 4s infinite alternate;
+            transition: transform 0.3s ease;
+        }
+        
+        .neon-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+        }
+        
+        @keyframes borderPulse {
+            0% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(0, 255, 255, 0.7); }
+        }
+        
+        .neon-pink {
+            border-color: #f0f;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+            animation: borderPulsePink 4s infinite alternate;
+        }
+        
+        .neon-pink:hover {
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.7);
+        }
+        
+        @keyframes borderPulsePink {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(255, 0, 255, 0.7); }
+        }
+        
+        /* Neon text effects */
+        .neon-text {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+            animation: textPulse 2s infinite alternate;
+        }
+        
+        @keyframes textPulse {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
+            }
+            to {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #f0f, 0 0 20px #f0f, 0 0 25px #f0f;
+            }
+        }
+        
+        .neon-text-pink {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #f0f, 0 0 20px #f0f, 0 0 25px #f0f;
+        }
+        
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            margin: 10px 15px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background-color: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 10px #0ff;
+            transform: translateY(-3px);
+        }
+        
+        /* Skills section */
+        .skill-bars {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #222;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #0ff, #f0f);
+            border-radius: 5px;
+        }
+        
+        /* Projects section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border: 1px solid #0ff;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #222;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background-color: rgba(0, 255, 255, 0.2);
+            color: #0ff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        /* Contact section */
+        .contact {
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: inline-block;
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #111;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0ff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid #0ff;
+        }
+        
+        .social-link:hover {
+            background-color: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px #0ff;
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin-bottom: 10px;
+                width: 200px;
+                text-align: center;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controller, .ghost {
+                transform: scale(0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="background"></div>
+    <div class="grid"></div>
+    
+    <!-- Game icons -->
+    <div class="controller"></div>
+    <div class="ghost">
+        <div class="ghost-eye"></div>
+        <div class="ghost-eye right"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="neon-text">Jordan Phillips</h1>
+            <p>Junior Unity Game Developer</p>
+        </header>
+        
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+        <section id="about" class="about neon-box">
+            <h2 class="neon-text">About Me</h2>
+            <p>
+                Hi! I'm Jordan Phillips, a Junior Unity Game Developer with a passion for creating immersive and interactive game experiences. I specialize in using Unity for both 2D and 3D game development, and I complement my technical skills with 3D modeling and animation using Blender. My journey into game development has been shaped by hands-on projects, creative exploration, and formal training — most recently through the SkillsCity Game Development Bootcamp.
+            </p>
+            <p>
+                During my time at SkillsCity, I gained practical experience in designing and building games from the ground up. The bootcamp provided me with in-depth exposure to Unity's powerful toolset, including C# scripting, physics, animation systems, UI/UX design, and optimization techniques. I also worked on team-based projects that simulated real-world game development environments, sharpening my collaboration, problem-solving, and agile workflow skills.
+            </p>
+            <p>
+                In parallel, I used Blender to create custom 3D assets, environments, and basic animations — skills that I now regularly integrate into my Unity projects. Being able to produce and animate my own models has allowed me to bring unique, stylized elements into my games, giving them a personal creative touch.
+            </p>
+            <p>
+                This portfolio highlights some of the projects I've developed so far, including solo builds and collaborative efforts from the bootcamp. Each one showcases not only the technical and creative skills I've developed, but also my commitment to learning, improving, and pushing the boundaries of what I can create as a game developer.
+            </p>
+            <p>
+                Thank you for visiting — I'm excited to share my work and look forward to connecting with others who are as passionate about game development as I am!
+            </p>
+        </section>
+        
+        <section id="skills" class="skills neon-box neon-pink">
+            <h2 class="neon-text-pink">Skills</h2>
+            <div class="skill-bars">
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Unity</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>C# Programming</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Blender</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Game Design</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>UI/UX Design</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 70%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Version Control (Git)</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="projects neon-box">
+            <h2 class="neon-text">Projects</h2>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('project1.jpg');"></div>
+                    <div class="project-info">
+                        <h3>Project Name 1</h3>
+                        <p>A brief description of the project, what it does, and your role in creating it.</p>
+                        <div class="project-tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">3D</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('project2.jpg');"></div>
+                    <div class="project-info">
+                        <h3>Project Name 2</h3>
+                        <p>A brief description of the project, what it does, and your role in creating it.</p>
+                        <div class="project-tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">2D</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('project3.jpg');"></div>
+                    <div class="project-info">
+                        <h3>Project Name 3</h3>
+                        <p>A brief description of the project, what it does, and your role in creating it.</p>
+                        <div class="project-tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">3D Modeling</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact neon-box neon-pink">
+            <h2 class="neon-text-pink">Contact Me</h2>
+            <p>I'm always open to discussing game development projects or opportunities. Feel free to reach out!</p>
+            <p>Email: your.email@example.com</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">GH</a>
+                <a href="#" class="social-link">LI</a>
+                <a href="#" class="social-link">TW</a>
+                <a href="#" class="social-link">IG</a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 Jordan Phillips | Unity Game Developer Portfolio</p>
+        </footer>
+    </div>
+</body>
+</html>
