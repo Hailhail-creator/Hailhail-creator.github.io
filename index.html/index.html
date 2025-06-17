@@ -1,201 +1,150 @@
-<!DOCTYPE html>
+﻿<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordan Phillips | Unity Game Developer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jordan Phillips - Game Developer</title>
+    <style>
+        body {
+            background-color: #0f0f23;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            text-shadow: 0 0 5px #00ff88;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ff88;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff88;
+        }
+
+        h1, h2, h3 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        a {
+            color: #00ffff;
+            text-decoration: none;
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+
+        .skills-section, .projects-section {
+            margin-top: 30px;
+            padding: 15px;
+            border-left: 3px solid #ff00ff;
+        }
+
+        img {
+            border: 2px solid #00ffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        ul li {
+            margin: 5px 0;
+            list-style-type: none;
+        }
+
+        ul li:before {
+            content: "▸ ";
+            color: #ff00ff;
+        }
+
+        .project {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-left: 3px solid #00ffff;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="./images/profile.png" alt="Jordan Phillips" class="profile-image">
-            <h1>Jordan Phillips</h1>
-            <h2>Unity Game Developer</h2>
-        </div>
-    </header>
-
-    <section id="about">
-        <div class="container">
+    <div class="container">
+        <img src="Jordan Phillips.jpg" alt="Jordan Phillips">
+        <h1>Jordan Phillips</h1>
+        <h2>Unity Game Developer</h2>
+        
+        <div class="about-section">
             <h2>About Me</h2>
             <p>I'm always open to discussing game development projects or opportunities. Feel free to reach out!</p>
             <p>Contact: your.email@example.com</p>
         </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
+        
+        <div class="skills-section">
             <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill-item">
-                    <h3>Game Development</h3>
-                    <ul>
-                        <li>Unity3D</li>
-                        <li>C#</li>
-                        <li>Game Design</li>
-                        <li>Level Design</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <h3>Graphics</h3>
-                    <ul>
-                        <li>Blender</li>
-                        <li>Adobe Photoshop</li>
-                        <li>3D Modeling</li>
-                        <li>Texturing</li>
-                    </ul>
-                </div>
-                <div class="skill-item">
-                    <h3>Other</h3>
-                    <ul>
-                        <li>Version Control (Git)</li>
-                        <li>Agile Development</li>
-                        <li>Problem Solving</li>
-                        <li>Team Collaboration</li>
-                    </ul>
-                </div>
-            </div>
+            
+            <h3>Game Development</h3>
+            <ul>
+                <li>Unity3D</li>
+                <li>C#</li>
+                <li>Game Design</li>
+                <li>Level Design</li>
+            </ul>
+            
+            <h3>Graphics</h3>
+            <ul>
+                <li>Blender</li>
+                <li>Adobe Photoshop</li>
+                <li>3D Modeling</li>
+                <li>Texturing</li>
+            </ul>
+            
+            <h3>Other</h3>
+            <ul>
+                <li>Version Control (Git)</li>
+                <li>Agile Development</li>
+                <li>Problem Solving</li>
+                <li>Team Collaboration</li>
+            </ul>
         </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
+        
+        <div class="projects-section">
             <h2>Projects</h2>
             
-            <!-- Project 1 -->
             <div class="project">
-                <img class="project-image" src="./images/project1.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 1 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#HTML</span>
-                        <span class="tag">#CSS</span>
-                        <span class="tag">#JavaScript</span>
-                    </span>
-                </div>
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1 Name</h3>
+                <p>A brief description of the project, what it does, and your role in creating it. #HTML #CSS #JavaScript</p>
             </div>
-
-            <!-- Project 2 -->
+            
             <div class="project">
-                <img class="project-image" src="./images/project2.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 2 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#HTML</span>
-                        <span class="tag">#CSS</span>
-                        <span class="tag">Global Effects</span>
-                    </span>
-                </div>
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2 Name</h3>
+                <p>A brief description of the project, what it does, and your role in creating it. #HTML #CSS Global Effects</p>
             </div>
-
-            <!-- Project 3 -->
+            
             <div class="project">
-                <img class="project-image" src="./images/project3.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 3 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#C#</span>
-                        <span class="tag">#GameDev</span>
-                    </span>
-                </div>
+                <img src="project3.jpg" alt="Project 3">
+                <h3>Project 3 Name</h3>
+                <p>A brief description of the project, what it does, and your role in creating it. #Unity #C# #GameDev</p>
             </div>
-
-            <!-- Project 4 -->
+            
             <div class="project">
-                <img class="project-image" src="./images/project4.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 4 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#3DModeling</span>
-                        <span class="tag">#Animation</span>
-                    </span>
-                </div>
+                <img src="project4.jpg" alt="Project 4">
+                <h3>Project 4 Name</h3>
+                <p>A brief description of the project, what it does, and your role in creating it. #Unity #3DModeling #Animation</p>
             </div>
-
-            <!-- Project 5 -->
+            
             <div class="project">
-                <img class="project-image" src="./images/project5.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 5 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#VR</span>
-                        <span class="tag">#Interaction</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project">
-                <img class="project-image" src="./images/project6.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 6 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Mobile</span>
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#UI/UX</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Project 7 -->
-            <div class="project">
-                <img class="project-image" src="./images/project7.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 7 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#Physics</span>
-                        <span class="tag">#Gameplay</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Project 8 -->
-            <div class="project">
-                <img class="project-image" src="./images/project8.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 8 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#AI</span>
-                        <span class="tag">#Procedural</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Project 9 -->
-            <div class="project">
-                <img class="project-image" src="./images/project9.png">
-                <div class="project-info">
-                    <h3 class="project-name">Project 9 Name</h3>
-                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
-                    <span class="project-tags">
-                        <span class="tag">#Unity</span>
-                        <span class="tag">#Shaders</span>
-                        <span class="tag">#Graphics</span>
-                    </span>
-                </div>
+                <img src="project5.jpg" alt="Project 5">
+                <h3>Project 5 Name</h3>
+                <p>A brief description of the project, what it does, and your role in creating it. #Unity #VR #Interaction</p>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Jordan Phillips | Unity Game Developer Portfolio</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>
+
