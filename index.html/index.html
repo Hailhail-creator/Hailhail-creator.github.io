@@ -1,494 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Jordan Phillips - Unity Game Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Orbitron', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    
-    /* Background elements */
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-      z-index: -10;
-    }
-    
-    .grid {
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background-image: 
-          linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-      background-size: 50px 50px;
-      transform: perspective(500px) rotateX(60deg);
-      z-index: -5;
-      animation: moveGrid 15s linear infinite;
-    }
-    
-    @keyframes moveGrid {
-      0% { background-position: 0 0; }
-      100% { background-position: 0 50px; }
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    /* Neon text effects */
-    .neon-text {
-      color: #fff;
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
-      animation: textPulse 2s infinite alternate;
-    }
-    
-    @keyframes textPulse {
-      from {
-          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0ff, 0 0 20px #0ff, 0 0 25px #0ff;
-      }
-      to {
-          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #f0f, 0 0 20px #f0f, 0 0 25px #f0f;
-      }
-    }
-    
-    /* Section styles */
-    header {
-      text-align: center;
-      padding: 50px 0;
-    }
-    
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      border-bottom: 1px solid #0ff;
-      padding-bottom: 10px;
-      text-shadow: 0 0 10px #0ff;
-    }
-    
-    /* Project styles */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-      margin-bottom: 50px;
-    }
-    
-    .project-card {
-      border: 1px solid #0ff;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-    }
-    
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
-    }
-    
-    .project-image {
-      width: 100%;
-      height: auto;
-    }
-    
-    .project-info {
-      padding: 20px;
-    }
-    
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    
-    .tag {
-      background-color: rgba(0, 255, 255, 0.2);
-      color: #0ff;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin-right: 5px;
-      margin-bottom: 5px;
-    }
-    
-    /* About section */
-    .about {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #0ff;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-      margin-bottom: 50px;
-    }
-    
-    /* Skills section */
-    .skills {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #f0f;
-      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
-      margin-bottom: 50px;
-    }
-    
-    .skill-bars {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    
-    .skill {
-      margin-bottom: 15px;
-    }
-    
-    .skill-name {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
-    }
-    
-    .skill-bar {
-      height: 10px;
-      background-color: #222;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    
-    .skill-level {
-      height: 100%;
-      background: linear-gradient(90deg, #0ff, #f0f);
-      border-radius: 5px;
-    }
-    
-    /* Contact section */
-    .contact {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #f0f;
-      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
-      margin-bottom: 50px;
-      text-align: center;
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .social-link {
-      display: inline-block;
-      margin: 10px;
-      width: 50px;
-      height: 50px;
-      background-color: #111;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #0ff;
-      text-decoration: none;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-      border: 1px solid #0ff;
-    }
-    
-    .social-link:hover {
-      background-color: rgba(0, 255, 255, 0.2);
-      box-shadow: 0 0 15px #0ff;
-      transform: scale(1.1);
-    }
-    
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      border-top: 1px solid rgba(0, 255, 255, 0.3);
-    }
-    
-    /* Responsive design */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-      
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Phillips | Unity Game Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Background elements -->
-  <div class="background"></div>
-  <div class="grid"></div>
-  
-  <div class="container">
     <header>
-      <h1 class="neon-text">Jordan Phillips</h1>
-      <p>Junior Unity Game Developer</p>
-      <div style="text-align: center; margin: 20px 0;">
-        <img src="profile" alt="Jordan Phillips" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #0ff; box-shadow: 0 0 15px #0ff; object-fit: cover;">
-      </div>
+        <div class="header-content">
+            <img src="./images/profile.png" alt="Jordan Phillips" class="profile-image">
+            <h1>Jordan Phillips</h1>
+            <h2>Unity Game Developer</h2>
+        </div>
     </header>
-    
-    <section id="about" class="about">
-      <h2 class="neon-text">About Me</h2>
-      <p>
-        Hi! I'm Jordan Phillips, a Junior Unity Game Developer with a passion for creating immersive and interactive game experiences. I specialize in using Unity for both 2D and 3D game development, and I complement my technical skills with 3D modeling and animation using Blender. My journey into game development has been shaped by hands-on projects, creative exploration, and formal training — most recently through the SkillsCity Game Development Bootcamp.
-      </p>
-      <p>
-        During my time at SkillsCity, I gained practical experience in designing and building games from the ground up. The bootcamp provided me with in-depth exposure to Unity's powerful toolset, including C# scripting, physics, animation systems, UI/UX design, and optimization techniques. I also worked on team-based projects that simulated real-world game development environments, sharpening my collaboration, problem-solving, and agile workflow skills.
-      </p>
-      <p>
-        In parallel, I used Blender to create custom 3D assets, environments, and basic animations — skills that I now regularly integrate into my Unity projects. Being able to produce and animate my own models has allowed me to bring unique, stylized elements into my games, giving them a personal creative touch.
-      </p>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm always open to discussing game development projects or opportunities. Feel free to reach out!</p>
+            <p>Contact: your.email@example.com</p>
+        </div>
     </section>
-    
-    <section id="skills" class="skills">
-      <h2 class="neon-text">Skills</h2>
-      <div class="skill-bars">
-        <div class="skill">
-          <div class="skill-name">
-            <span>Unity</span>
-            <span>90%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 90%"></div>
-          </div>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <h3>Game Development</h3>
+                    <ul>
+                        <li>Unity3D</li>
+                        <li>C#</li>
+                        <li>Game Design</li>
+                        <li>Level Design</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>Graphics</h3>
+                    <ul>
+                        <li>Blender</li>
+                        <li>Adobe Photoshop</li>
+                        <li>3D Modeling</li>
+                        <li>Texturing</li>
+                    </ul>
+                </div>
+                <div class="skill-item">
+                    <h3>Other</h3>
+                    <ul>
+                        <li>Version Control (Git)</li>
+                        <li>Agile Development</li>
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <div class="skill">
-          <div class="skill-name">
-            <span>C# Programming</span>
-            <span>85%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 85%"></div>
-          </div>
-        </div>
-        
-        <div class="skill">
-          <div class="skill-name">
-            <span>Blender</span>
-            <span>75%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 75%"></div>
-          </div>
-        </div>
-        
-        <div class="skill">
-          <div class="skill-name">
-            <span>Game Design</span>
-            <span>80%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 80%"></div>
-          </div>
-        </div>
-        
-        <div class="skill">
-          <div class="skill-name">
-            <span>UI/UX Design</span>
-            <span>70%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 70%"></div>
-          </div>
-        </div>
-        
-        <div class="skill">
-          <div class="skill-name">
-            <span>Version Control (Git)</span>
-            <span>65%</span>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-level" style="width: 65%"></div>
-          </div>
-        </div>
-      </div>
     </section>
-    
+
     <section id="projects">
-      <h2 class="neon-text">Projects</h2>
-      
-      <div class="project-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <img src="project1" alt="Project 1" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 1</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">C#</span>
-              <span class="tag">3D</span>
+        <div class="container">
+            <h2>Projects</h2>
+            
+            <!-- Project 1 -->
+            <div class="project">
+                <img class="project-image" src="./images/project1.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 1 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#HTML</span>
+                        <span class="tag">#CSS</span>
+                        <span class="tag">#JavaScript</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="project-card">
-          <img src="project2" alt="Project 2" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 2</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">2D</span>
-              <span class="tag">Mobile</span>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <img class="project-image" src="./images/project2.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 2 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#HTML</span>
+                        <span class="tag">#CSS</span>
+                        <span class="tag">Global Effects</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img src="project3" alt="Project 3" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 3</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Blender</span>
-              <span class="tag">3D Modeling</span>
-              <span class="tag">Animation</span>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <img class="project-image" src="./images/project3.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 3 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#C#</span>
+                        <span class="tag">#GameDev</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 4 -->
-        <div class="project-card">
-          <img src="project4" alt="Project 4" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 4</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">VR</span>
-              <span class="tag">Interactive</span>
+
+            <!-- Project 4 -->
+            <div class="project">
+                <img class="project-image" src="./images/project4.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 4 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#3DModeling</span>
+                        <span class="tag">#Animation</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 5 -->
-        <div class="project-card">
-          <img src="project5" alt="Project 5" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 5</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">AI</span>
-              <span class="tag">Gameplay</span>
+
+            <!-- Project 5 -->
+            <div class="project">
+                <img class="project-image" src="./images/project5.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 5 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#VR</span>
+                        <span class="tag">#Interaction</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 6 -->
-        <div class="project-card">
-          <img src="project6" alt="Project 6" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 6</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">Multiplayer</span>
-              <span class="tag">Networking</span>
+
+            <!-- Project 6 -->
+            <div class="project">
+                <img class="project-image" src="./images/project6.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 6 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Mobile</span>
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#UI/UX</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 7 -->
-        <div class="project-card">
-          <img src="project7" alt="Project 7" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 7</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">Procedural</span>
-              <span class="tag">Generation</span>
+
+            <!-- Project 7 -->
+            <div class="project">
+                <img class="project-image" src="./images/project7.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 7 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#Physics</span>
+                        <span class="tag">#Gameplay</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 8 -->
-        <div class="project-card">
-          <img src="project8" alt="Project 8" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 8</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">Physics</span>
-              <span class="tag">Simulation</span>
+
+            <!-- Project 8 -->
+            <div class="project">
+                <img class="project-image" src="./images/project8.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 8 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#AI</span>
+                        <span class="tag">#Procedural</span>
+                    </span>
+                </div>
             </div>
-          </div>
-        </div>
-        
-        <!-- Project 9 -->
-        <div class="project-card">
-          <img src="project9" alt="Project 9" class="project-image">
-          <div class="project-info">
-            <h3>Project Name 9</h3>
-            <p>A brief description of the project, what it does, and your role in creating it.</p>
-            <div class="project-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">Shaders</span>
-              <span class="tag">Visual Effects</span>
+
+            <!-- Project 9 -->
+            <div class="project">
+                <img class="project-image" src="./images/project9.png">
+                <div class="project-info">
+                    <h3 class="project-name">Project 9 Name</h3>
+                    <span class="project-description">A brief description of the project, what it does, and your role in creating it.</span>
+                    <span class="project-tags">
+                        <span class="tag">#Unity</span>
+                        <span class="tag">#Shaders</span>
+                        <span class="tag">#Graphics</span>
+                    </span>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
-    
-    <section id="contact" class="contact">
-      <h2 class="neon-text">Contact Me</h2>
-      <p>I'm always open to discussing game development projects or opportunities. Feel free to reach out!</p>
-      <p>Email: your.email@example.com</p>
-      
-      <div class="social-links">
-        <a href="#" class="social-link">GH</a>
-        <a href="#" class="social-link">LI</a>
-        <a href="#" class="social-link">TW</a>
-        <a href="#" class="social-link">IG</a>
-      </div>
-    </section>
-    
+
     <footer>
-      <p>&copy; 2025 Jordan Phillips | Unity Game Developer Portfolio</p>
+        <div class="container">
+            <p>&copy; 2023 Jordan Phillips | Unity Game Developer Portfolio</p>
+        </div>
     </footer>
-  </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
